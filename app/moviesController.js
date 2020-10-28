@@ -14,7 +14,7 @@ exports.getAll = async function(req, res){
 
 exports.search = async function(req, res){
   let page = req.query.page;
-  let query = req.query.text;
+  let query = req.query.q;
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${config.moviedb_key}&language=en-US&page=${page}&query=${query}`;
   try {
     const response = await axios.get(url);
